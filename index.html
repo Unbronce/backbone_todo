@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,800;1,400&family=Roboto:wght@100&family=Turret+Road&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/template" id="formField">
+      <div class="formContainer">
+        <input class="InputText" type="text" placeholder="What to do?" id="formFieldInput">
+        <button class="Button Add" id="formButton">Add</button></div>
+        <div class="TodoList"><ul id="listContainer"></ul></div>
+    </script>
+
+    <script type="text/template" id="list">
+      <li class="Card" id="listItem"><%= value %></li>
+    </script>
+
+    <script src="main.js"></script>
+  </body>
+</html>

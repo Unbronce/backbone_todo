@@ -1,0 +1,20 @@
+{
+  "name": "parcel_backbone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backbone": "^1.4.0",
+    "backbone.modelbinder": "^1.1.0",
+    "jquery": "^3.5.1",
+    "underscore": "^1.11.0",
+    "uuid": "^8.3.1"
+  }
+}

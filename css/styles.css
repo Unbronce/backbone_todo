@@ -1,0 +1,89 @@
+html {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Turret Road", cursive;
+}
+
+#app {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.Button {
+  display: block;
+  font: inherit;
+  padding: 0.5rem 2rem;
+  border: 1px solid #ff2058;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Add {
+  background: #fff;
+  color: #ff2058;
+}
+
+.Delete {
+  background: #ff2058;
+  color: #fff;
+}
+
+.Button:hover,
+.Button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
+}
+
+.Button:focus {
+  outline: none;
+}
+
+.InputText {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.1rem 0.25rem;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.InputText:focus {
+  outline: none;
+  border-bottom-color: #ff2058;
+}
+
+.Card {
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.TodoList {
+  width: 30rem;
+  max-width: 80%;
+  margin: auto;
+}
+
+.TodoList h2 {
+  border-bottom: 3px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+.TodoList ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.TodoList li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.26);
+  display: flex;
+  justify-content: space-between;
+}
