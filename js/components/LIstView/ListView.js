@@ -17,8 +17,7 @@ const ListView = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template(this.model.toJSON()));
-    this.$(".editor").hide();
-    this.$("#editorSave").hide();
+    this.$(".editorBlock").hide();
     return this;
   },
 
@@ -28,17 +27,13 @@ const ListView = Backbone.View.extend({
 
   _editToDo: function () {
     this.$(".editor").val(this.model.get("value"));
-    this.$(".value").hide();
-    this.$("#delToDo").hide();
-    this.$("#editToDo").hide();
-    this.$(".editor").show();
-    this.$("#editorSave").show();
+    this.$(".toDoBlock").hide();
+    this.$(".editorBlock").show();
   },
 
   _editedTodo: function () {
     this.model.set({ value: this.$(".editor").val() });
-    this.$(".editor").hide();
-    this.$("#editorSave").hide();
+    this.$(".editorBlock").hide();
     this.$("#listItem").empty();
     this.render();
   },

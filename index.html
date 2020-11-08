@@ -22,11 +22,15 @@
 
     <script type="text/template" id="list">
       <li class="Card" id="listItem">
-        <p class="value"><%= value %></p>
-        <button class="Button Delete" id="delToDo">Delete</button>
-        <button class="Button Add" id="editToDo">Edit</button>
-        <input class="editor InputText" type="text"   >
-        <button class="Button Add"  id="editorSave">Save</button>
+        <div class="toDoBlock">
+          <p class="value"><%= value %></p>
+          <button class="Button Delete" id="delToDo">Delete</button>
+          <button class="Button Add" id="editToDo">Edit</button>
+        </div>
+        <div class="editorBlock">
+          <input class="editor InputText" type="text"   >
+          <button class="Button Add"  id="editorSave">Save</button>
+        </div>
       </li>
     </script>
 
