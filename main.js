@@ -34,8 +34,6 @@ const MainView = Backbone.View.extend({
 
   _addTodo: function () {
     this.collection.add({ value: $("#formFieldInput").val() });
-    console.log(this.collection.toJSON());
-
     this.$("#formFieldInput").val("");
   },
 });

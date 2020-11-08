@@ -87,3 +87,8 @@ html {
   display: flex;
   justify-content: space-between;
 }
+
+.value {
+  margin: 0;
+  padding: 0;
+}
