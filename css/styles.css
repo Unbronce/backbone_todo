@@ -92,3 +92,43 @@ html {
   margin: 0;
   padding: 0;
 }
+
+.FieldHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.FieldLabel {
+  user-select: none;
+}
+
+.FieldCheckbox + .FieldLabel::before {
+  position: absolute;
+  content: "";
+  left: 13%;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e5e5e5;
+  background-color: #ffffff;
+}
+
+.FieldCheckbox:checked + .FieldLabel::before {
+  position: absolute;
+  content: "";
+  left: 13%;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e5e5e5;
+  background: url("../assets/checked.svg") 50% 50% no-repeat;
+  background-color: #ffffff;
+}

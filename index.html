@@ -23,7 +23,8 @@
     <script type="text/template" id="list">
       <li class="Card" id="listItem">
         <div class="toDoBlock">
-          <p class="value"><%= value %></p>
+          <input class="inputChek FieldHidden FieldCheckbox" type="checkbox" >
+          <label class="value FieldLabel"><%= value %></label>
           <button class="Button Delete" id="delToDo">Delete</button>
           <button class="Button Add" id="editToDo">Edit</button>
         </div>
