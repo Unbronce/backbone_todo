@@ -14,6 +14,7 @@ const ListView = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, "destroy", this.remove);
+    this.listenTo(this.model, "change", this._isDone);
   },
 
   render: function () {
@@ -56,12 +57,40 @@ const ListView = Backbone.View.extend({
     this.render();
   },
 
+  _isDone: function () {
+    const modelID = this.model.get("id");
+    const arr = JSON.parse(localStorage.getItem("item"));
+    const newArr = arr.map((model) => {
+      if (model.id === modelID) {
+        return {
+          ...model,
+          done: this.model.get("done"),
+        };
+      }
+      return model;
+    });
+    localStorage.setItem("item", JSON.stringify(newArr));
+
+    if (this.model.get("done")) {
+      this.$(".inputChek").prop("checked", true);
+      this.$(".value").css("text-decoration", "line-through");
+    } else {
+      this.$(".inputChek").prop("checked", false);
+      this.$(".value").css("text-decoration", "none");
+    }
+  },
+
   _doneTodo: function () {
     this.$(".value").attr("for", this.model.get("id"));
     this.$(".inputChek").attr("id", this.model.get("id"));
-    this.$(".inputChek").is(":checked")
-      ? this.$(".value").css("text-decoration", "none")
-      : this.$(".value").css("text-decoration", "line-through");
+
+    if (this.$(".inputChek").is(":checked")) {
+      this.model.set({ done: false });
+      this.$(".inputChek").prop("checked", true);
+    } else {
+      this.model.set({ done: true });
+      this.$(".inputChek").prop("checked", false);
+    }
   },
 });
 

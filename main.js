@@ -53,6 +53,7 @@ const MainView = Backbone.View.extend({
     this.collection.each(function (model) {
       const listView = new ListView({ model });
       $toDoList.append(listView.render().$el);
+      _.once(listView._isDone());
     });
   },
 });
