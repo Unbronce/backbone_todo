@@ -23,6 +23,9 @@ const ListView = Backbone.View.extend({
   },
 
   _deletTodo: function () {
+    const arr = JSON.parse(localStorage.getItem("item"));
+    const newArr = arr.filter((model) => model.id !== this.model.get("id"));
+    localStorage.setItem("item", JSON.stringify(newArr));
     this.model.trigger("destroy", this.model);
   },
 
@@ -35,6 +38,19 @@ const ListView = Backbone.View.extend({
 
   _editedTodo: function () {
     this.model.set({ value: this.$(".editor").val() });
+    const modelValue = this.model.get("value");
+    const modelID = this.model.get("id");
+    const arr = JSON.parse(localStorage.getItem("item"));
+    const newArr = arr.map((model) => {
+      if (model.id === modelID) {
+        return {
+          ...model,
+          value: modelValue,
+        };
+      }
+      return model;
+    });
+    localStorage.setItem("item", JSON.stringify(newArr));
     this.$(".editorBlock").hide();
     this.$("#listItem").empty();
     this.render();

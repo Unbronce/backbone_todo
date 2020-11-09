@@ -6,6 +6,7 @@ const ListModel = Backbone.Model.extend({
   defaults() {
     return {
       value: "",
+      done: false,
       id: uuidv4(),
     };
   },
